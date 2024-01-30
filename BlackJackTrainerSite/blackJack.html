@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="">
+
+        
+        <!--FONTS-->
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+        <div id = 'info_container'><button onclick="toggleInfo()"></button></div>
+
+        <div id = 'info_screen'>
+            <h1>Info</h1>
+            <p>This game is meant to simulate a game where:
+                <ul>
+                    <li>Doubling after splitting is allowed</li>
+                    <li>Surrednering is not an option</li>
+                    <li>Doubling is always allowed</li>
+                </ul>
+            </p>
+            <button onclick="toggleInfo()">Close</button>
+        </div>
+        <div id = "game_Area">
+            <div id = "header">
+                <h1>BLACKJACK TRAINER</h1>
+            </div>
+            <div id = "card_area">
+                <div id = "dealer_area">
+                    <img id = "dealer_card" src = ""></img>
+                </div>
+                <div id = "player_area">
+                    <img id = "player_card1" src = "" ></img>
+                    <img id = "player_card2" src = ""></img>
+                    <div id = "buttons_area">
+                        <button id = "stand_button" onclick="player_input('Stand')">Stand</button>
+                        <button onclick="player_input('Hit')">Hit</button>
+                        <button onclick="player_input('Split')">Split</button>
+                        <button onclick="player_input('Double')">Double</button>
+                    </div>
+                </div>
+            <div id = 'feedback_area'>
+                <h2 id = 'feedback_text'>Select Your Move</h2>
+            </div>
+        </div>
+            
+        </div>
+        <script src = "blackJack.js"></script>
+    </body>
+</html>
+<style>
+    #game_Area{
+        position: absolute;
+        width: 80vw;
+        height: 75vh;
+        left: 12.5vw;
+        top: 12.5vh;
+        text-align: center;
+    }
+
+    #header{
+        position: relative;
+        height: 7.5%;
+        font-size: 100%;
+        width: 100%;
+        padding-bottom: 1%;
+    }
+
+    #header h1{
+        height: 100%;
+        margin: 0px;
+    }
+
+    #card_area img{
+        width: 5vw;
+    }
+
+    #dealer_area{
+        padding-bottom: 15px;
+    }
+
+    #player_area{
+        display: inline-block;
+    }
+
+    #info_container{
+        position: fixed;
+        height: 2vw;
+        width: 2vw;
+        right: 15px;
+        
+    }
+    #info_container button{
+        width: 100%;
+        height: 100%;
+        background-image: url("playingCards/info_button.png");
+        background-size: contain;
+        background-color: transparent;
+        border: none;
+    }
+
+    ul{
+        list-style-type: none;
+    }
+
+    #info_screen{
+        position: absolute;
+        width: 100vw;
+        height: 100vw;
+        text-align: center;
+        z-index: 1000;
+        background: white;
+    }
+</style>
