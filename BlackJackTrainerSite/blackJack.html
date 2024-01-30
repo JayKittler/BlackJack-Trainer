@@ -14,13 +14,17 @@
 
         
         <!--FONTS-->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400..700;1,400..700&family=Oswald:wght@200..700&display=swap" rel="stylesheet">
     </head>
     <body>
         <!--[if lt IE 7]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
         <div id = 'info_container'><button onclick="toggleInfo()"></button></div>
-
+        
+        <!--Basic Info Screen-->
         <div id = 'info_screen'>
             <h1>Info</h1>
             <p>This game is meant to simulate a game where:
@@ -32,17 +36,18 @@
             </p>
             <button onclick="toggleInfo()">Close</button>
         </div>
+        <!--Area that game is in-->
         <div id = "game_Area">
             <div id = "header">
                 <h1>BLACKJACK TRAINER</h1>
             </div>
             <div id = "card_area">
                 <div id = "dealer_area">
-                    <img id = "dealer_card" src = ""></img>
+                    <img id = "dealer_card" src = "" alt = "DEALERCARD"></img>
                 </div>
                 <div id = "player_area">
-                    <img id = "player_card1" src = "" ></img>
-                    <img id = "player_card2" src = ""></img>
+                    <img id = "player_card1" src = "" alt = "PLAYERCARD1" ></img>
+                    <img id = "player_card2" src = "" alt = "PLAYERCARD2"></img>
                     <div id = "buttons_area">
                         <button id = "stand_button" onclick="player_input('Stand')">Stand</button>
                         <button onclick="player_input('Hit')">Hit</button>
@@ -50,16 +55,19 @@
                         <button onclick="player_input('Double')">Double</button>
                     </div>
                 </div>
-            <div id = 'feedback_area'>
-                <h2 id = 'feedback_text'>Select Your Move</h2>
-            </div>
-        </div>
-            
+            <!--Feedback/result area-->
+            <div id = 'feedback_area'><h2 id = 'feedback_text' style="font-size:1.5vw;">Select Your Move</h2></div>
         </div>
         <script src = "blackJack.js"></script>
     </body>
 </html>
 <style>
+    *{
+        font-family: "Arimo", sans-serif;
+        font-optical-sizing: auto;
+        font-weight: 500;
+        font-style: normal;
+    }
     #game_Area{
         position: absolute;
         width: 80vw;
@@ -72,7 +80,7 @@
     #header{
         position: relative;
         height: 7.5%;
-        font-size: 100%;
+        font-size: 1vw;
         width: 100%;
         padding-bottom: 1%;
     }
@@ -106,6 +114,7 @@
         height: 100%;
         background-image: url("playingCards/info_button.png");
         background-size: contain;
+        background-repeat: none;
         background-color: transparent;
         border: none;
     }
@@ -121,5 +130,10 @@
         text-align: center;
         z-index: 1000;
         background: white;
+    }
+
+    #buttons_area button{
+        background: black;
+        color: white;
     }
 </style>
